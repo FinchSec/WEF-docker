@@ -1,6 +1,10 @@
-# WEF-Docker-private
+# Wireless Exploitation Framework (WEF)
 
 Docker for https://github.com/D3Ext/WEF using Kali as a base. Rebuilt daily.
+
+## DockerHub
+
+DockerHub: https://hub.docker.com/r/finchsec/wef
 
 ## Running
 
