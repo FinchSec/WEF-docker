@@ -10,7 +10,7 @@ Docker for https://github.com/D3Ext/WEF using Kali as a base. Rebuilt daily.
 
 URL: https://hub.docker.com/r/finchsec/wef
 
-`sudo docker pull finchsec/kali`
+`sudo docker pull finchsec/wef`
 
 ## Running
 
