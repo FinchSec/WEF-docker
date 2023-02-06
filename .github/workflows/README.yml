@@ -6,6 +6,7 @@ on:
       - 'main'
     paths:
       - README.md
+      - '.github/workflows/README.yml'
   workflow_dispatch:
 
 jobs:
