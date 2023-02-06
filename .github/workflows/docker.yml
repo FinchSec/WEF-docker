@@ -6,6 +6,8 @@ on:
       - 'main'
     paths-ignore:
       - 'README.md'
+      - '.github/workflows/README.yml'
+      - 'LICENSE'
   schedule:
     - cron: '0 5 * * *'
   workflow_dispatch:
@@ -14,6 +16,8 @@ on:
       - 'main'
     paths-ignore:
       - 'README.md'
+      - '.github/workflows/README.yml'
+      - 'LICENSE'
 
 jobs:
   docker:
