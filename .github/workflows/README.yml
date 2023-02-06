@@ -10,7 +10,7 @@ on:
 
 jobs:
   docker-readme-update:
-    runs-on: ubuntu-22.o4
+    runs-on: ubuntu-22.04
     steps:
       -
         name: Git Checkout
