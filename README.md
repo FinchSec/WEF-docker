@@ -1,4 +1,4 @@
-# Wireless Exploitation Framework (WEF)
+# Wireless Exploitation Framework (WEF) container
 
 Docker for https://github.com/D3Ext/WEF using Kali as a base. Rebuilt daily.
 
