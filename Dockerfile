@@ -45,13 +45,13 @@ RUN apt-get update && \
 		rm -rf /var/lib/dpkg/status-old /etc/dpkg/dpkg.cfg.d/force-unsafe-io /var/lib/apt/lists/*
 RUN apt-get update && \
 	echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/force-unsafe-io && \
-    apt install python3 python3-pip python3-bluez python3-requests python3-serial python3-crcmod \
+    apt-get install python3 python3-pip python3-bluez python3-requests python3-serial python3-crcmod \
                 python3-halo python3-wrapt python3-intelhex python3-ecdsa python3-pycryptodome \
                 python3-pwntools python3-spinners python3-termcolor python3-six python3-tqdm \
                 python3-click -y && \
         grep -v -E '^(pycryptodome|pyserial|pybluez|requests|pwntools)$' /opt/wef/requirements.txt > /tmp/requirements.txt && \
         pip3 install -r /tmp/requirements.txt && \
-        apt remove python3-pip -y && \
-        apt autoremove -y && \
+        apt-get remove python3-pip -y && \
+        apt-get autoremove -y && \
         apt-get autoclean && \
 		rm -rf /var/lib/dpkg/status-old /etc/dpkg/dpkg.cfg.d/force-unsafe-io /var/lib/apt/lists/*
