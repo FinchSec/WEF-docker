@@ -31,9 +31,12 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 # hadolint ignore=DL3008,DL3015
 RUN apt-get update && \
 	echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/force-unsafe-io && \
-    apt-get install hashcat hcxdumptool dnsmasq php hashcat-utils hcxtools pixiewps bully \
+    apt-get install hcxdumptool dnsmasq php hashcat-utils hcxtools pixiewps bully \
                     mdk4 aircrack-ng hostapd wget reaver libbluetooth-dev moreutils net-tools \
-                    xterm macchanger crackle python3-bluez pciutils usbutils kmod -y && \
+                    xterm macchanger crackle python3-bluez pciutils usbutils kmod 
+                    $([ "$(uname -m)" != "armv7l" ] && echo hashcat-utils hashcat pocl-opencl-icd) \
+			        $([ "$(uname -m)" = "x86_64" ] && echo intel-opencl-icd) \
+                    -y && \
         ln -s /usr/lib/hashcat-utils/cap2hccapx.bin /usr/bin/cap2hccapx && \
         grep -v -E '^pybluez$' /opt/wef/requirements.txt > /tmp/requirements.txt && \
         pip install -r /tmp/requirements.txt && \
