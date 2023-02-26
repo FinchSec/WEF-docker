@@ -32,7 +32,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN apt-get update && \
 	echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/force-unsafe-io && \
     apt-get install hcxdumptool dnsmasq php hashcat-utils hcxtools pixiewps bully \
-                    mdk4 aircrack-ng hostapd wget reaver libbluetooth-dev moreutils net-tools \
+                    mdk4 aircrack-ng hostapd wget reaver libbluetooth-dev moreutils \
                     xterm macchanger crackle python3-bluez pciutils usbutils kmod 
                     $([ "$(uname -m)" != "armv7l" ] && echo hashcat-utils hashcat pocl-opencl-icd) \
 			        $([ "$(uname -m)" = "x86_64" ] && echo intel-opencl-icd) \
