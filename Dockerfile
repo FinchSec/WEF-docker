@@ -35,7 +35,7 @@ RUN apt-get update && \
                     mdk4 aircrack-ng hostapd wget reaver libbluetooth-dev moreutils \
                     xterm macchanger crackle python3-bluez pciutils usbutils kmod \
 			        $([ "$(uname -m)" = "x86_64" ] && echo intel-opencl-icd) \
-                    echo hashcat pocl-opencl-icd -y && \
+                    hashcat pocl-opencl-icd -y && \
         ln -s /usr/lib/hashcat-utils/cap2hccapx.bin /usr/bin/cap2hccapx && \
         grep -v -E '^pybluez$' /opt/wef/requirements.txt > /tmp/requirements.txt && \
         pip install -r /tmp/requirements.txt && \
