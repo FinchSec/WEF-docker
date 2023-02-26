@@ -38,6 +38,6 @@ RUN apt-get update && \
                     hashcat pocl-opencl-icd -y && \
         ln -s /usr/lib/hashcat-utils/cap2hccapx.bin /usr/bin/cap2hccapx && \
         grep -v -E '^pybluez$' /opt/wef/requirements.txt > /tmp/requirements.txt && \
-        pip install -r /tmp/requirements.txt && \
+        pip install --no-cache-dir -r /tmp/requirements.txt && \
 		apt-get autoclean && \
 		rm -rf /var/lib/dpkg/status-old /etc/dpkg/dpkg.cfg.d/force-unsafe-io /var/lib/apt/lists/*
