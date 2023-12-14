@@ -34,8 +34,8 @@ RUN apt-get update && \
     apt-get install hcxdumptool dnsmasq php hashcat-utils hcxtools pixiewps bully \
                     mdk4 aircrack-ng hostapd wget reaver libbluetooth-dev moreutils \
                     xterm macchanger crackle python3-bluez pciutils usbutils kmod \
-			        $([ "$(uname -m)" = "x86_64" ] && echo intel-opencl-icd) \
-                    hashcat pocl-opencl-icd gcc python3-dev make -y && \
+			        $([ "$(uname -m)" = "x86_64" ] && echo intel-opencl-icd) lshw \
+                    hashcat pocl-opencl-icd gcc python3-dev make lighttpd iptables -y && \
         ln -s /usr/lib/hashcat-utils/cap2hccapx.bin /usr/bin/cap2hccapx && \
         grep -v -E '^pybluez$' /opt/wef/requirements.txt > /tmp/requirements.txt && \
         pip install --no-cache-dir -r /tmp/requirements.txt && \
