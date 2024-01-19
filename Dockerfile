@@ -4,9 +4,7 @@ RUN apt-get update && \
         apt-get install git -y wget gcc python3-pip --no-install-recommends
 RUN git clone https://github.com/D3Ext/WEF/
 WORKDIR /WEF/
-RUN sed -i 's/dependencies=.*/dependencies=()/g' setup.sh && \
-        bash setup.sh && \
-        rm /opt/wef/update.sh /opt/wef/uninstaller.sh
+RUN bash src/setup.sh
 
 FROM finchsec/kali:base
 LABEL org.opencontainers.image.authors="thomas@finchsec.com"
@@ -14,8 +12,10 @@ ENV DISPLAY :0
 
 # Copy files from builder
 COPY --from=builder /opt/wef /opt/wef
+COPY --from=builder /WEF/wef /opt/wef/wef
 COPY wef.sh /usr/local/sbin/wef
-RUN chmod +x /usr/local/sbin/wef
+RUN chmod +x /usr/local/sbin/wef && \
+    chmod +x /opt/wef/wef
 
 # hadolint ignore=DL3008,DL3015
 RUN apt-get update && \
