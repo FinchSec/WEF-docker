@@ -24,7 +24,9 @@ RUN apt-get update && \
                     mdk4 aircrack-ng hostapd wget reaver moreutils lshw \
                     xterm macchanger pciutils usbutils kmod john hostapd-wpe \
                 $([ "$(uname -m)" = "x86_64" ] && echo intel-opencl-icd) \
-                    hashcat pocl-opencl-icd lighttpd iptables python3-jinja2 -y && \
+                    hashcat pocl-opencl-icd lighttpd iptables python3-jinja2 \
+                    isc-dhcp-server curl bsdextrautils jq psmisc systemctl \
+                    airgraph-ng -y && \
         ln -s /usr/lib/hashcat-utils/cap2hccapx.bin /usr/bin/cap2hccapx && \
         apt-get autoremove -y && \
 		apt-get autoclean && \
