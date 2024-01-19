@@ -19,6 +19,7 @@ RUN chmod +x /usr/local/sbin/wef && \
 
 # hadolint ignore=DL3008,DL3015
 RUN apt-get update && \
+    apt-get dist-upgrade -y && \
 	echo "force-unsafe-io" > /etc/dpkg/dpkg.cfg.d/force-unsafe-io && \
     apt-get install hcxdumptool dnsmasq php hashcat-utils hcxtools pixiewps bully \
                     mdk4 aircrack-ng hostapd wget reaver moreutils lshw \
