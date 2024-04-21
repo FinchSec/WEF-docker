@@ -24,7 +24,6 @@ RUN apt-get update && \
     apt-get install hcxdumptool dnsmasq php hashcat-utils hcxtools pixiewps bully \
                     mdk4 aircrack-ng hostapd wget reaver moreutils lshw \
                     xterm macchanger pciutils usbutils kmod john hostapd-wpe \
-                $([ "$(uname -m)" = "x86_64" ] && echo intel-opencl-icd) \
                     hashcat pocl-opencl-icd lighttpd iptables python3-jinja2 \
                     isc-dhcp-server curl bsdextrautils jq psmisc systemctl \
                     airgraph-ng -y && \
